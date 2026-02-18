@@ -15,7 +15,8 @@ cask "rustysound" do
 
       If it is blocked:
         1. In Finder, right-click Rustysound.app and choose Open.
-        2. Or run:
+        2. Open settings > Security & Privacy > General, and click "Open Anyway" for Rustysound.
+        3. Or run:
            xattr -dr com.apple.quarantine /Applications/Rustysound.app
     EOS
   end
