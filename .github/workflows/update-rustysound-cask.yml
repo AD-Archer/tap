@@ -2,10 +2,8 @@ name: Update RustySound Cask
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "17 * * * *"
   repository_dispatch:
-    types: [rustysound_release]
+    types: [rustysound-release]
 
 permissions:
   contents: write

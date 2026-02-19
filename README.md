@@ -29,7 +29,7 @@ brew upgrade --cask rustysound
 
 RustySound is auto-updated by GitHub Actions in `.github/workflows/update-rustysound-cask.yml`.
 
-- Runs hourly (`:17` every hour)
+- No cron schedule (dispatch/manual only)
 - Supports manual run via `workflow_dispatch`
-- Supports `repository_dispatch` event type `rustysound_release`
+- Supports `repository_dispatch` event type `rustysound-release`
 - Updates `Casks/rustysound.rb` version + sha256 and pushes commit only when changed
