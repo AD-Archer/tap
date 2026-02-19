@@ -1,11 +1,11 @@
-# ad-archer/casks
+# ad-archer/tap
 
 Homebrew tap for casks published by AD-Archer.
 
 ## Install the tap
 
 ```bash
-brew tap ad-archer/casks
+brew tap ad-archer/tap
 ```
 
 ## Install [RustySound](https://github.com/AD-Archer/RustySound)
