@@ -2,6 +2,11 @@ name: Update RustySound Cask
 
 on:
   workflow_dispatch:
+    inputs:
+      release_tag:
+        description: "RustySound release tag (e.g. v0.1.67)"
+        required: false
+        type: string
   repository_dispatch:
     types: [rustysound-release]
 
@@ -23,10 +28,19 @@ jobs:
       - name: Update cask version and checksum
         id: update
         run: |
+          RELEASE_TAG=""
           if [[ "${{ github.event_name }}" == "repository_dispatch" ]]; then
-            export RELEASE_TAG='${{ github.event.client_payload.version }}'
+            RELEASE_TAG='${{ github.event.client_payload.version }}'
             echo "Using dispatched release tag: ${RELEASE_TAG}"
+          elif [[ -n '${{ inputs.release_tag }}' ]]; then
+            RELEASE_TAG='${{ inputs.release_tag }}'
+            echo "Using manual release tag input: ${RELEASE_TAG}"
           fi
+
+          if [[ -n "${RELEASE_TAG}" ]]; then
+            export RELEASE_TAG
+          fi
+
           bash .github/scripts/update-rustysound-cask.sh
 
       - name: Commit and push changes
