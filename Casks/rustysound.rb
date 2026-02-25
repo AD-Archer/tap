@@ -1,6 +1,6 @@
 cask "rustysound" do
-  version "0.1.70"
-  sha256 "47ffd6ae77f4ff1a7858f630f99b227925fc9c7fca7864fa65bada6674f8e15c"
+  version "0.1.71"
+  sha256 "1217b148b5ab528c73fee26d6854116e37d0e71b9530bd828ed42e4c3bbca518"
 
   url "https://github.com/AD-Archer/RustySound/releases/download/v#{version}/Rustysound.dmg"
   name "RustySound"
